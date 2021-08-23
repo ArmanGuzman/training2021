@@ -1,0 +1,2 @@
+ERROR | 2021-08-19 18:20:42,519 | TrapArray.java | arrayValue | exiting arrayValue without error 
+INFO | 2021-08-19 18:20:42,538 | TrapArray.java | arrayTransact | exiting without error arrayTransact 
