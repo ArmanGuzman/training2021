@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		targetNamespace="http://www.77global.org/flightlist"
+		xmlns:tns="http://www.77global.org/flightlist"
+		elementFormDefault="qualified">
+		
+		<xs:element name="flightlist">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="flight">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="passengers">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="passenger">
+												<xs:complexType>
+													<xs:attribute name="name" use="required">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+													<xs:attribute name="seat" use="required">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value=".{1,}[A-Z].">
+																</xs:pattern>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+										<xs:attribute name="date" use="required">
+											<xs:simpleType>
+												<xs:restriction base="xs:date"/>
+											</xs:simpleType>
+										</xs:attribute>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+							<xs:attribute name="number" use="required">
+								<xs:simpleType>
+									<xs:restriction base="xs:integer">
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+							<xs:attribute name="origin" use="required">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="BOS"/>
+										<xs:enumeration value="SJU"/>
+										<xs:enumeration value="SFO"/>
+										<xs:enumeration value="JFK"/>
+										<xs:enumeration value="DCA"/>
+										<xs:enumeration value="MAD"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+							<xs:attribute name="dest" use="required">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="BOS"/>
+										<xs:enumeration value="SJU"/>
+										<xs:enumeration value="SFO"/>
+										<xs:enumeration value="JFK"/>
+										<xs:enumeration value="DCA"/>
+										<xs:enumeration value="MAD"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		
+		
+		
+
+</xs:schema>
